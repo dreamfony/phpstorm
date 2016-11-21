@@ -1,0 +1,18 @@
+<?php
+/**
+ * @file
+ * My custom entity type.
+ */
+
+/**
+ * Implements hook_permission().
+ */
+function ${moduleName}_permission() {
+}
+
+/**
+ * Implements hook_entity_info().
+ */
+function ${moduleName}_entity_info() {
+
+}

@@ -1,0 +1,27 @@
+<templateSet group="Drupal 8">
+  <template name="FieldDefinition::create" value="$fields['$name$'] = FieldDefinition::create('$type$')&#10;  -&gt;setLabel(t('$label$'))&#10;  -&gt;setDescription(t('$description$'))&#10;  -&gt;setReadOnly($readOnly$)&#10;  -&gt;setSettings('$settingsName$', $settingsValue$);&#10;&#10;FieldDefinition::create$END$" description="D8" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="&quot;my_field&quot;" alwaysStopAt="true" />
+    <variable name="type" expression="enum(&quot;integer&quot;, &quot;string&quot;, &quot;language&quot;, &quot;entity_reference&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="label" expression="capitalize(underscoresToSpaces(name))" defaultValue="" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="&quot;Useful description&quot;" alwaysStopAt="true" />
+    <variable name="readOnly" expression="enum(&quot;FALSE&quot;, &quot;TRUE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="settingsName" expression="enum(&quot;unsigned&quot;, &quot;target_type&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="settingsValue" expression="enum(&quot;TRUE&quot;, &quot;FALSE&quot;, &quot;'foo'&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="SQL" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="PHP" value="true" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+</templateSet>

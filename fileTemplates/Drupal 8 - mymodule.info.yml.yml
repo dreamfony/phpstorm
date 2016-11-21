@@ -1,0 +1,11 @@
+#set( $versionMain = "8.x" )
+#set( $versionMinor = "1.x" )
+#set( $version = "${versionMain}-${versionMinor}" )
+type: module
+name: '${name}'
+description: '${description}'
+package: '${package}'
+core: '${versionMain}'
+#if( ${hostedByDrupalOrg} == "")
+version: '${version}'
+#end

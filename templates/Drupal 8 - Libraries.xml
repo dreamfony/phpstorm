@@ -1,0 +1,56 @@
+<templateSet group="Drupal 8 - Libraries">
+  <template name="lib_def" value="$name$:&#10;  #version: '1.0'&#10;  js:&#10;    js/$module$.$name$.js: $END${}&#10;  css:&#10;    base:&#10;      css/$module$.$name$.base.css: {}&#10;    layout:&#10;      css/$module$.$name$.layout.css: {}&#10;    component:&#10;      css/$module$.$name$.component.css: {}&#10;    state:&#10;      css/$module$.$name$.state.css: {}&#10;    theme:&#10;      css/$module$.$name$.theme.css: {}&#10;  dependencies:&#10;    - lib_dep&#10;" description="Library definition in *.libraries.yml" toReformat="false" toShortenFQNames="true">
+    <variable name="module" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="" defaultValue="&quot;foo&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="lib_css" value="media: '$media$'&#10;preprocess: true&#10;minified: false&#10;browsers:&#10;  IE: true&#10;  !IE: true" description="Properties of a CSS file in *.libraries.yml" toReformat="false" toShortenFQNames="true">
+    <variable name="media" expression="enum(&quot;all&quot;, &quot;braille&quot;, &quot;embossed&quot;, &quot;handheld&quot;, &quot;print&quot;, &quot;projection&quot;, &quot;screen&quot;, &quot;speech&quot;, &quot;tty&quot;, &quot;tv&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="lib_js" value="type: '$type$'&#10;scope: '$scope$'&#10;minified: false&#10;cache: true&#10;preprocess: true&#10;attributes: {}&#10;browsers:&#10;  IE: true&#10;  !IE: true" description="Properties of a JS file in *.libraries.yml" toReformat="false" toShortenFQNames="true">
+    <variable name="type" expression="enum(&quot;file&quot;, &quot;external&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="scope" expression="enum(&quot;header&quot;, &quot;footer&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="lib" value="$name$" description="Library name autocomplete" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="enum(&quot;bartik/color.preview&quot;, &quot;bartik/global-styling&quot;, &quot;bartik/maintenance_page&quot;, &quot;bartik/messages&quot;, &quot;big_pipe/big_pipe&quot;, &quot;block_content/drupal.block_content&quot;, &quot;block/drupal.block&quot;, &quot;block/drupal.block.admin&quot;, &quot;book/drupal.book&quot;, &quot;ckeditor/drupal.ckeditor&quot;, &quot;ckeditor/drupal.ckeditor.admin&quot;, &quot;ckeditor/drupal.ckeditor.drupalimage.admin&quot;, &quot;ckeditor/drupal.ckeditor.language.admin&quot;, &quot;ckeditor/drupal.ckeditor.plugins.drupalimagecaption&quot;, &quot;ckeditor/drupal.ckeditor.plugins.language&quot;, &quot;ckeditor/drupal.ckeditor.stylescombo.admin&quot;, &quot;classy/base&quot;, &quot;classy/book-navigation&quot;, &quot;classy/dialog&quot;, &quot;classy/dropbutton&quot;, &quot;classy/file&quot;, &quot;classy/forum&quot;, &quot;classy/indented&quot;, &quot;classy/messages&quot;, &quot;classy/node&quot;, &quot;classy/progress&quot;, &quot;classy/search-results&quot;, &quot;classy/user&quot;, &quot;color/admin&quot;, &quot;color/drupal.color&quot;, &quot;color/drupal.color.preview&quot;, &quot;comment/drupal.comment&quot;, &quot;comment/drupal.comment-by-viewer&quot;, &quot;comment/drupal.comment-new-indicator&quot;, &quot;comment/drupal.node-new-comments-link&quot;, &quot;config_translation/drupal.config_translation.admin&quot;, &quot;content_translationdrupal.content_translation.admin&quot;, &quot;contextual/drupal.contextual-links&quot;, &quot;contextual/drupal.contextual-toolbar&quot;, &quot;core/backbone&quot;, &quot;core/ckeditor&quot;, &quot;core/classList&quot;, &quot;core/domready&quot;, &quot;core/drupal&quot;, &quot;core/drupal.active-link&quot;, &quot;core/drupal.ajax&quot;, &quot;core/drupal.announce&quot;, &quot;core/drupal.autocomplete&quot;, &quot;core/drupal.batch&quot;, &quot;core/drupal.collapse&quot;, &quot;core/drupal.date&quot;, &quot;core/drupal.debounce&quot;, &quot;core/drupal.dialog&quot;, &quot;core/drupal.dialog.ajax&quot;, &quot;core/drupal.displace&quot;, &quot;core/drupal.dropbutton&quot;, &quot;core/drupal.form&quot;, &quot;core/drupal.machine-name&quot;, &quot;core/drupal.progress&quot;, &quot;core/drupalSettings&quot;, &quot;core/drupal.states&quot;, &quot;core/drupal.tabbingmanager&quot;, &quot;core/drupal.tabledrag&quot;, &quot;core/drupal.tableheader&quot;, &quot;core/drupal.tableresponsive&quot;, &quot;core/drupal.tableselect&quot;, &quot;core/drupal.timezone&quot;, &quot;core/drupal.vertical-tabs&quot;, &quot;core/html5shiv&quot;, &quot;core/jquery&quot;, &quot;core/jquery.cookie&quot;, &quot;core/jquery.farbtastic&quot;, &quot;core/jquery.form&quot;, &quot;core/jquery.joyride&quot;, &quot;core/jquery.once&quot;, &quot;core/jquery.ui&quot;, &quot;core/jquery.ui.accordion&quot;, &quot;core/jquery.ui.autocomplete&quot;, &quot;core/jquery.ui.button&quot;, &quot;core/jquery.ui.datepicker&quot;, &quot;core/jquery.ui.dialog&quot;, &quot;core/jquery.ui.draggable&quot;, &quot;core/jquery.ui.droppable&quot;, &quot;core/jquery.ui.effects.blind&quot;, &quot;core/jquery.ui.effects.bounce&quot;, &quot;core/jquery.ui.effects.clip&quot;, &quot;core/jquery.ui.effects.core&quot;, &quot;core/jquery.ui.effects.drop&quot;, &quot;core/jquery.ui.effects.explode&quot;, &quot;core/jquery.ui.effects.fade&quot;, &quot;core/jquery.ui.effects.fold&quot;, &quot;core/jquery.ui.effects.highlight&quot;, &quot;core/jquery.ui.effects.puff&quot;, &quot;core/jquery.ui.effects.pulsate&quot;, &quot;core/jquery.ui.effects.scale&quot;, &quot;core/jquery.ui.effects.shake&quot;, &quot;core/jquery.ui.effects.size&quot;, &quot;core/jquery.ui.effects.slide&quot;, &quot;core/jquery.ui.effects.transfer&quot;, &quot;core/jquery.ui.menu&quot;, &quot;core/jquery.ui.mouse&quot;, &quot;core/jquery.ui.position&quot;, &quot;core/jquery.ui.progressbar&quot;, &quot;core/jquery.ui.resizable&quot;, &quot;core/jquery.ui.selectable&quot;, &quot;core/jquery.ui.selectmenu&quot;, &quot;core/jquery.ui.slider&quot;, &quot;core/jquery.ui.sortable&quot;, &quot;core/jquery.ui.spinner&quot;, &quot;core/jquery.ui.tabs&quot;, &quot;core/jquery.ui.tooltip&quot;, &quot;core/jquery.ui.touch-punch&quot;, &quot;core/jquery.ui.widget&quot;, &quot;core/matchmedia&quot;, &quot;core/matchmedia.addListener&quot;, &quot;core/modernizr&quot;, &quot;core/normalize&quot;, &quot;core/picturefill&quot;, &quot;core/underscore&quot;, &quot;dblog/drupal.dblog&quot;, &quot;editor/drupal.editor&quot;, &quot;editor/drupal.editor.admin&quot;, &quot;editor/drupal.editor.dialog&quot;, &quot;editor/quickedit.inPlaceEditor.formattedText&quot;, &quot;field_ui/drupal.field_ui&quot;, &quot;file/drupal.file&quot;, &quot;filter/caption&quot;, &quot;filter/drupal.filter&quot;, &quot;filter/drupal.filter.admin&quot;, &quot;filter/drupal.filter.filter_html.admin&quot;, &quot;history/api&quot;, &quot;history/mark-as-read&quot;, &quot;image/admin&quot;, &quot;language/drupal.language.admin&quot;, &quot;locale/drupal.locale.admin&quot;, &quot;locale/drupal.locale.datepicker&quot;, &quot;locale/translations&quot;, &quot;menu_ui/drupal.menu_ui&quot;, &quot;menu_ui/drupal.menu_ui.admin&quot;, &quot;menu_ui/drupal.menu_ui.adminforms&quot;, &quot;node/drupal.content_types&quot;, &quot;node/drupal.node&quot;, &quot;node/drupal.node.admin&quot;, &quot;node/drupal.node.preview&quot;, &quot;node/form&quot;, &quot;path/drupal.path&quot;, &quot;quickedit/quickedit&quot;, &quot;quickedit/quickedit.inPlaceEditor.form&quot;, &quot;quickedit/quickedit.inPlaceEditor.plainText&quot;, &quot;responsive_image/ajax&quot;, &quot;seven/drupal.nav-tabs&quot;, &quot;seven/global-styling&quot;, &quot;seven/install-page&quot;, &quot;seven/maintenance-page&quot;, &quot;seven/node-form&quot;, &quot;seven/seven.drupal.dialog&quot;, &quot;seven/seven.jquery.ui&quot;, &quot;seven/tour-styling&quot;, &quot;seven/vertical-tabs&quot;, &quot;shortcut/drupal.shortcut&quot;, &quot;stark/global-styling&quot;, &quot;statisticsdrupal.statistics&quot;, &quot;system/admin&quot;, &quot;system/base&quot;, &quot;system/diff&quot;, &quot;system/drupal.system&quot;, &quot;system/drupal.system.date&quot;, &quot;system/drupal.system.modules&quot;, &quot;system/maintenance&quot;, &quot;taxonomy/drupal.taxonomy&quot;, &quot;text/drupal.text&quot;, &quot;toolbar/toolbar&quot;, &quot;toolbar/toolbar.escapeAdmin&quot;, &quot;toolbar/toolbar.menu&quot;, &quot;tour/tour&quot;, &quot;tour/tour-styling&quot;, &quot;tracker/history&quot;, &quot;update/drupal.update.admin&quot;, &quot;user/drupal.user&quot;, &quot;user/drupal.user.admin&quot;, &quot;user/drupal.user.icons&quot;, &quot;user/drupal.user.permissions&quot;, &quot;views_ui/admin.styling&quot;, &quot;views_ui/views_ui.admin&quot;, &quot;views_ui/views_ui.listing&quot;, &quot;views/views.ajax&quot;, &quot;views/views.module&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="XML_TEXT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="SQL" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="Twig" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="Bash" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JS_EXPRESSION" value="false" />
+      <option name="JSX_HTML" value="false" />
+      <option name="JS_STATEMENT" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="PHP" value="false" />
+      <option name="PHP Comment" value="true" />
+      <option name="PHP String Literal" value="true" />
+      <option name="HAML" value="false" />
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="lib_dep" value="'lib$END$'&#10;- lib_dep" description="Dependencies entry" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+</templateSet>

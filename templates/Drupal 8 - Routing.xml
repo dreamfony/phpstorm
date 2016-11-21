@@ -1,0 +1,13 @@
+<templateSet group="Drupal 8 - Routing">
+  <template name="route_page" value="$module$.$route_name_suffix$:&#10;  path: '/$module_dash$'&#10;  defaults:&#10;    _title: '$title$'&#10;    #_title_callback: '\Drupal\$module$\Controller\$controller$Controller::title'&#10;    _controller: '\Drupal\$module$\Controller\$controller$Controller::$method$'&#10;  requirements:&#10;    _permission: 'perm$END$'&#10;" toReformat="false" toShortenFQNames="true">
+    <variable name="module" expression="firstWord(fileNameWithoutExtension())" defaultValue="" alwaysStopAt="true" />
+    <variable name="route_name_suffix" expression="" defaultValue="&quot;foo&quot;" alwaysStopAt="true" />
+    <variable name="module_dash" expression="lowercaseAndDash(module)" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="&quot;Foo&quot;" alwaysStopAt="true" />
+    <variable name="controller" expression="capitalize(camelCase(route_name))" defaultValue="" alwaysStopAt="true" />
+    <variable name="method" expression="" defaultValue="&quot;page&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+</templateSet>

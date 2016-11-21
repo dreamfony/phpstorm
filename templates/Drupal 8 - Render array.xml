@@ -1,0 +1,409 @@
+<templateSet group="Drupal 8 - Render array">
+  <template name="ra_actions" value="[&#10;  '#type' =&gt; 'actions',&#10;  '$key$' =&gt; ra_submit$END$&#10;]$terminator$" description="Render array - actions" toReformat="true" toShortenFQNames="true">
+    <variable name="key" expression="" defaultValue="&quot;submit&quot;" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_checkbox" value="[&#10;  '#type' =&gt; 'checkbox',&#10;  '#title' =&gt; $this-&gt;t('$title$'),&#10;  '#description' =&gt; $this-&gt;t('$description$'),&#10;  '#default_value' =&gt; $default_value$,$END$&#10;]$terminator$" description="Render array - checkbox" toReformat="true" toShortenFQNames="true">
+    <variable name="title" expression="" defaultValue="&quot;Title&quot;" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="&quot;Long description&quot;" alwaysStopAt="true" />
+    <variable name="default_value" expression="enum(&quot;FALSE&quot;, &quot;TRUE&quot;,  &quot;variable_get_value($key)&quot;, &quot;$default[$key]&quot;, &quot;variable_get($key, FALSE)&quot;, &quot;variable_get($key, TRUE)&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_checkbox_" value="[&#10;  '#type' =&gt; 'checkbox',&#10;  '#title' =&gt; $this-&gt;t('$title$'),&#10;  '#description' =&gt; $this-&gt;t('$description$'),&#10;  '#required' =&gt; $required$,&#10;  '#return_value' =&gt; '$return_value$',&#10;  '#default_value' =&gt; $default_value$,$END$&#10;  '#field_prefix' =&gt; '$field_prefix$',&#10;  '#field_suffix' =&gt; '$field_suffix$',&#10;  '#prefix' =&gt; '$prefix$',&#10;  '#suffix' =&gt; '$suffix$',&#10;  '#attached' =&gt; array(&#10;    'library' =&gt; [&#10;      'lib',&#10;    ],&#10;  ),&#10;  '#states' =&gt; [&#10;    'invisible' =&gt; [&#10;      ':input[name=&quot;&quot;]' =&gt; ['checked' =&gt; FALSE],&#10;    ],&#10;  ],&#10;]$terminator$" description="Render array - checkbox (Extended)" toReformat="true" toShortenFQNames="true">
+    <variable name="title" expression="" defaultValue="&quot;Title&quot;" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="&quot;Description&quot;" alwaysStopAt="true" />
+    <variable name="required" expression="enum(&quot;FALSE&quot;, &quot;TRUE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="return_value" expression="" defaultValue="&quot;1&quot;" alwaysStopAt="true" />
+    <variable name="default_value" expression="enum(&quot;FALSE&quot;, &quot;TRUE&quot;,  &quot;variable_get_value($key)&quot;, &quot;$default[$key]&quot;, &quot;variable_get($key, FALSE)&quot;, &quot;variable_get($key, TRUE)&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="field_prefix" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="field_suffix" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="prefix" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="suffix" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_checkboxes" value="[&#10;  '#type' =&gt; 'checkboxes',&#10;  '#required' =&gt; $required$,&#10;  '#title' =&gt; $this-&gt;t('$title$'),&#10;  '#description' =&gt; $this-&gt;t('$description$'),&#10;  '#default_value' =&gt; $default_value$,$END$&#10;  '#options' =&gt; $options$,&#10;]$terminator$" description="Render array - checkboxes" toReformat="true" toShortenFQNames="true">
+    <variable name="required" expression="enum(&quot;FALSE&quot;, &quot;TRUE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="&quot;Title&quot;" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="&quot;Long description&quot;" alwaysStopAt="true" />
+    <variable name="default_value" expression="enum(&quot;array()&quot;,  &quot;variable_get_value($key)&quot;, &quot;$default[$key]&quot;, &quot;variable_get($key, array())&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="options" expression="" defaultValue="&quot;array()&quot;" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_checkboxes_" value="[&#10;  '#type' =&gt; 'checkboxes',&#10;  '#required' =&gt; $required$,&#10;  '#title' =&gt; $this-&gt;t('$title$'),&#10;  '#title_display' =&gt; '$title_display$',&#10;  '#description' =&gt; $this-&gt;t('$description$'),&#10;  '#default_value' =&gt; $default_value$,$END$&#10;  '#options' =&gt; $options$,&#10;  '#prefix' =&gt; '$prefix$',&#10;  '#suffix' =&gt; '$suffix$',&#10;  '#attached' =&gt; [&#10;    '??library' =&gt; 'foo/bar',&#10;  ],&#10;  '#states' =&gt; [&#10;    'invisible' =&gt; [&#10;      ':input[name=&quot;foo&quot;]' =&gt; ['checked' =&gt; FALSE],&#10;    ],&#10;  ],&#10;)$terminator$" description="Render array - checkboxes (Extended)" toReformat="true" toShortenFQNames="true">
+    <variable name="required" expression="enum(&quot;FALSE&quot;, &quot;TRUE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="&quot;Title&quot;" alwaysStopAt="true" />
+    <variable name="title_display" expression="enum(&quot;above&quot;, &quot;none&quot;)" defaultValue="&quot;Description&quot;" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="default_value" expression="enum(&quot;array()&quot;,  &quot;variable_get_value($key)&quot;, &quot;$default[$key]&quot;, &quot;variable_get($key, array())&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="options" expression="" defaultValue="&quot;array()&quot;" alwaysStopAt="true" />
+    <variable name="prefix" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="suffix" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_container" value="[&#10;  '#type' =&gt; 'container',&#10;  '#tree' =&gt; $tree$,&#10;]$terminator$" description="Render array - container" toReformat="true" toShortenFQNames="true">
+    <variable name="tree" expression="enum(&quot;TRUE&quot;, &quot;FALSE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_date" value="[&#10;  '#type' =&gt; 'date',&#10;  '#title' =&gt; $this-&gt;t('$title$'),&#10;  '#description' =&gt; $this-&gt;t('$description$'),&#10;  '#default_value' =&gt; $END$$default_value$,&#10;]$terminator$" description="Render array - date" toReformat="true" toShortenFQNames="true">
+    <variable name="title" expression="" defaultValue="&quot;Title&quot;" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="&quot;Description&quot;" alwaysStopAt="true" />
+    <variable name="default_value" expression="" defaultValue="&quot;array('year' =&gt; '2012', 'month' =&gt; '1', 'day' =&gt; '1')&quot;" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_details" value="[&#10;  '#type' =&gt; 'details',&#10;  '#tree' =&gt; $tree$,&#10;  '#title' =&gt; $this-&gt;t('$title$'),&#10;  '#open' =&gt; $open$,&#10;]$terminator$" toReformat="false" toShortenFQNames="true">
+    <variable name="tree" expression="enum(&quot;TRUE&quot;, &quot;FALSE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="&quot;Foo&quot;" alwaysStopAt="true" />
+    <variable name="open" expression="enum(&quot;TRUE&quot;, &quot;FALSE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;, &quot;&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_fieldset" value="[&#10;  '#type' =&gt; 'fieldset',&#10;  '#tree' =&gt; $tree$,&#10;  '#title' =&gt; $this-&gt;t('$title$'),&#10;  '#description' =&gt; $this-&gt;t('$description$'),&#10;  '#collapsible' =&gt; $collapsible$,&#10;  '#collapsed' =&gt; $collapsed$,&#10;]$terminator$" description="Render array - fieldset" toReformat="true" toShortenFQNames="true">
+    <variable name="tree" expression="enum(&quot;TRUE&quot;, &quot;FALSE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="&quot;Title&quot;" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="&quot;Long description&quot;" alwaysStopAt="true" />
+    <variable name="collapsible" expression="enum(&quot;TRUE&quot;, &quot;FALSE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="collapsed" expression="enum(&quot;TRUE&quot;, &quot;FALSE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_file" value="[&#10;  '#type' =&gt; 'file',&#10;  '#required' =&gt; $required$,&#10;  '#title' =&gt; $this-&gt;t('$title$'),&#10;  '#description' =&gt; $this-&gt;t('$description$'),&#10;  '#size' =&gt; $size$,&#10;]$terminator$" description="Render array - file" toReformat="true" toShortenFQNames="true">
+    <variable name="required" expression="enum(&quot;FALSE&quot;, &quot;TRUE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="&quot;Title&quot;" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="&quot;Long description&quot;" alwaysStopAt="true" />
+    <variable name="size" expression="" defaultValue="&quot;30&quot;" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_file_" value="[&#10;  '#type' =&gt; 'file',&#10;  '#required' =&gt; $required$,&#10;  '#title' =&gt; $this-&gt;t('$title$'),&#10;  '#description' =&gt; $this-&gt;t('$description$'),&#10;  '#size' =&gt; $size$,&#10;  '#prefix' =&gt; $prefix$,&#10;  '#suffix' =&gt; $suffix$,&#10;]$terminator$" description="Render array - file (Extended)" toReformat="true" toShortenFQNames="true">
+    <variable name="required" expression="enum(&quot;FALSE&quot;, &quot;TRUE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="&quot;Title&quot;" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="&quot;Long description&quot;" alwaysStopAt="true" />
+    <variable name="size" expression="" defaultValue="&quot;30&quot;" alwaysStopAt="true" />
+    <variable name="prefix" expression="" defaultValue="&quot;''&quot;" alwaysStopAt="true" />
+    <variable name="suffix" expression="" defaultValue="&quot;''&quot;" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_hidden" value="[&#10;  '#type' =&gt; 'hidden',&#10;  '#value' =&gt; $value$,&#10;]$terminator$" description="Render array - hidden" toReformat="true" toShortenFQNames="true">
+    <variable name="value" expression="" defaultValue="&quot;$foo&quot;" alwaysStopAt="true" />
+    <variable name="terminator" expression="" defaultValue="&quot;;&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_image_button" value="[&#10;  '#type' =&gt; 'image_button',&#10;  '#value' =&gt; $this-&gt;t('$value$'),&#10;  '#src' =&gt; &quot;$src$&quot;,$END$&#10;]$terminator$" description="Render array - image_button" toReformat="true" toShortenFQNames="true">
+    <variable name="value" expression="" defaultValue="&quot;Save&quot;" alwaysStopAt="true" />
+    <variable name="src" expression="" defaultValue="&quot;{$path}/images/how-to-theming.png&quot;" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="&quot;;&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_item" value="[&#10;  '#type' =&gt; 'item',&#10;  '#title' =&gt; $this-&gt;t('$title$'),&#10;  '#markup' =&gt; '&lt;div$END$&gt;' . $markup$ . '&lt;/div&gt;',&#10;]$terminator$" description="Render array - item" toReformat="true" toShortenFQNames="true">
+    <variable name="title" expression="" defaultValue="&quot;Foo&quot;" alwaysStopAt="true" />
+    <variable name="markup" expression="" defaultValue="&quot;t('Foo')&quot;" alwaysStopAt="true" />
+    <variable name="terminator" expression="" defaultValue="&quot;;&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_link" value="[&#10;  '#type' =&gt; 'link',&#10;  '#title' =&gt; $this-&gt;t('$title$'),$END$&#10;  '#href' =&gt; $href$,&#10;  //'#options' =&gt; [&#10;    //'attributes' =&gt; ['class' =&gt; []],&#10;    //'absolute' =&gt; TRUE,&#10;    //'query' =&gt; [],&#10;  //],&#10;]$terminator$" description="Render array - link" toReformat="true" toShortenFQNames="true">
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="href" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_machine_name" value="[&#10;  '#type' =&gt; 'machine_name',&#10;  '#required' =&gt; $required$,&#10;  '#title' =&gt; $this-&gt;t('$title$'),&#10;  '#description' =&gt; $this-&gt;t('$description$'),&#10;  '#default_value' =&gt; '$default_value$',&#10;  '#machine_name' =&gt; [&#10;    'exists' =&gt; '$machine_name_exists$',&#10;  ],&#10;  '#maxlength' =&gt; $maxlength$,$END$&#10;]$terminator$" description="Render array - machine_name" toReformat="true" toShortenFQNames="true">
+    <variable name="required" expression="enum(&quot;TRUE&quot;, &quot;FALSE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="&quot;Title&quot;" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="&quot;Long description&quot;" alwaysStopAt="true" />
+    <variable name="default_value" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="machine_name_exists" expression="" defaultValue="&quot;node_type_get_type&quot;" alwaysStopAt="true" />
+    <variable name="maxlength" expression="" defaultValue="&quot;128&quot;" alwaysStopAt="true" />
+    <variable name="terminator" expression="" defaultValue="&quot;;&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_machine_name_" value="[&#10;  '#type' =&gt; 'machine_name',&#10;  '#required' =&gt; $required$,&#10;  '#title' =&gt; $this-&gt;t('$title$'),&#10;  '#title_display' =&gt; '$title_display$',&#10;  '#description' =&gt; $this-&gt;t('$description$'),&#10;  '#default_value' =&gt; $default_value$,&#10;  '#machine_name' =&gt; [&#10;    'exists' =&gt; '$machine_name_exists$',&#10;  ],&#10;  '#autocomplete_path' =&gt; &quot;$autocomplete_path$&quot;,&#10;  '#maxlength' =&gt; $maxlength$,&#10;  '#field_prefix' =&gt; '$field_prefix$',&#10;  '#field_suffix' =&gt; '$field_suffix$',&#10;  '#prefix' =&gt; '$prefix$',&#10;  '#suffix' =&gt; '$suffix$',$END$&#10;]$terminator$" description="Render array - machine_name (Extended)" toReformat="true" toShortenFQNames="true">
+    <variable name="required" expression="enum(&quot;TRUE&quot;, &quot;FALSE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="&quot;Title&quot;" alwaysStopAt="true" />
+    <variable name="title_display" expression="enum(&quot;above&quot;, &quot;none&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="default_value" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="&quot;Long description&quot;" alwaysStopAt="true" />
+    <variable name="machine_name_exists" expression="" defaultValue="&quot;node_type_get_type&quot;" alwaysStopAt="true" />
+    <variable name="autocomplete_path" expression="" defaultValue="&quot;&quot;" alwaysStopAt="true" />
+    <variable name="maxlength" expression="" defaultValue="&quot;128&quot;" alwaysStopAt="true" />
+    <variable name="field_prefix" expression="" defaultValue="&quot;&quot;" alwaysStopAt="true" />
+    <variable name="field_suffix" expression="" defaultValue="&quot;&quot;" alwaysStopAt="true" />
+    <variable name="prefix" expression="" defaultValue="&quot;&quot;" alwaysStopAt="true" />
+    <variable name="suffix" expression="" defaultValue="&quot;&quot;" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_managed_file" value="array(&#10;  '#type' =&gt; 'managed_file',&#10;  '#required' =&gt; $required$,&#10;  '#title' =&gt; t('$title$'),&#10;  '#description' =&gt; t('$description$'),&#10;  '#size' =&gt; $size$,&#10;)$terminator$" description="Render array - managed_file" toReformat="true" toShortenFQNames="true">
+    <variable name="required" expression="enum(&quot;FALSE&quot;, &quot;TRUE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="&quot;Title&quot;" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="&quot;Long description&quot;" alwaysStopAt="true" />
+    <variable name="size" expression="" defaultValue="&quot;30&quot;" alwaysStopAt="true" />
+    <variable name="terminator" expression="" defaultValue="&quot;;&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_managed_file_" value="array(&#10;  '#type' =&gt; 'managed_file',&#10;  '#required' =&gt; $required$,&#10;  '#title' =&gt; t('$title$'),&#10;  '#description' =&gt; t('$description$'),&#10;  '#size' =&gt; $size$,&#10;  '#prefix' =&gt; $prefix$,&#10;  '#suffix' =&gt; $suffix$,&#10;)$terminator$" description="Render array - managed_file (Extended)" toReformat="true" toShortenFQNames="true">
+    <variable name="required" expression="enum(&quot;FALSE&quot;, &quot;TRUE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="&quot;Title&quot;" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="&quot;Long description&quot;" alwaysStopAt="true" />
+    <variable name="size" expression="" defaultValue="&quot;30&quot;" alwaysStopAt="true" />
+    <variable name="prefix" expression="" defaultValue="&quot;''&quot;" alwaysStopAt="true" />
+    <variable name="suffix" expression="" defaultValue="&quot;''&quot;" alwaysStopAt="true" />
+    <variable name="terminator" expression="" defaultValue="&quot;;&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_markup" value="array(&#10;  '#markup' =&gt; '&lt;div$END$&gt;' . $markup$ . '&lt;/div&gt;',&#10;)$terminator$" description="Render array - markup" toReformat="true" toShortenFQNames="true">
+    <variable name="markup" expression="" defaultValue="&quot;foo&quot;" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_password" value="array(&#10;  '#type' =&gt; 'password',&#10;  '#required' =&gt; $required$,&#10;  '#title' =&gt; t('$title$'),&#10;  '#description' =&gt; t('$description$'),&#10;  '#size' =&gt; $size$,&#10;)$terminator$" description="Render array - password" toReformat="true" toShortenFQNames="true">
+    <variable name="required" expression="enum(&quot;FALSE&quot;, &quot;TRUE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="&quot;Title&quot;" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="&quot;Long description&quot;" alwaysStopAt="true" />
+    <variable name="size" expression="" defaultValue="&quot;30&quot;" alwaysStopAt="true" />
+    <variable name="terminator" expression="" defaultValue="&quot;;&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_password_" value="array(&#10;  '#type' =&gt; 'password',&#10;  '#required' =&gt; $required$,&#10;  '#title' =&gt; t('$title$'),&#10;  '#description' =&gt; t('$description$'),&#10;  '#size' =&gt; $size$,&#10;  '#field_prefix' =&gt; '$field_prefix$',&#10;  '#field_suffix' =&gt; '$field_suffix$',&#10;  '#prefix' =&gt; '$prefix$',&#10;  '#suffix' =&gt; '$suffix$',&#10;)$terminator$" description="Render array - password (Extended)" toReformat="true" toShortenFQNames="true">
+    <variable name="required" expression="enum(&quot;FALSE&quot;, &quot;TRUE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="&quot;Title&quot;" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="&quot;Long description&quot;" alwaysStopAt="true" />
+    <variable name="size" expression="" defaultValue="&quot;30&quot;" alwaysStopAt="true" />
+    <variable name="field_prefix" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="field_suffix" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="prefix" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="suffix" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_password_confirm" value="array(&#10;  '#type' =&gt; 'password_confirm',&#10;  '#required' =&gt; $required$,&#10;  '#description' =&gt; t('$description$'),&#10;  '#size' =&gt; $size$,&#10;)$terminator$$END$" description="Render array - password confirm" toReformat="false" toShortenFQNames="true">
+    <variable name="required" expression="enum(&quot;FALSE&quot;, &quot;TRUE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="description" expression="enum(&quot;To change the current user password, enter the new password in both fields.&quot;, &quot;Provide a password for the new account in both fields.&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="size" expression="" defaultValue="&quot;30&quot;" alwaysStopAt="true" />
+    <variable name="terminator" expression="" defaultValue="&quot;;&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_radio" value="array(&#10;  '#type' =&gt; 'radio',&#10;  '#title' =&gt; t('$title$'),&#10;  '#description' =&gt; t('$description$'),&#10;  '#return_value' =&gt; '$return_value$',&#10;  '#default_value' =&gt; $default_value$,&#10;  // @todo Test it, which one is the right.&#10;  '#parents' =&gt; array('self'),&#10;  '#name' =&gt; '$END$self',&#10;)$terminator$" description="Render array - radio" toReformat="true" toShortenFQNames="true">
+    <variable name="title" expression="" defaultValue="&quot;Title&quot;" alwaysStopAt="true" />
+    <variable name="default_value" expression="enum(&quot;FALSE&quot;, &quot;TRUE&quot;,  &quot;variable_get_value($key)&quot;, &quot;$default[$key]&quot;, &quot;variable_get($key, FALSE)&quot;, &quot;variable_get($key, TRUE)&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="return_value" expression="" defaultValue="&quot;foo&quot;" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="&quot;Long description&quot;" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_radios" value="[&#10;  '#type' =&gt; 'radios',&#10;  '#required' =&gt; $required$,&#10;  '#title' =&gt; $this-&gt;t('$title$'),&#10;  '#description' =&gt; $this-&gt;t('$description$'),&#10;  '#default_value' =&gt; $default_value$,&#10;  '#options' =&gt; $options$,&#10;]$terminator$" description="Render array - radios" toReformat="true" toShortenFQNames="true">
+    <variable name="required" expression="enum(&quot;FALSE&quot;, &quot;TRUE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="&quot;Title&quot;" alwaysStopAt="true" />
+    <variable name="default_value" expression="enum(&quot;variable_get_value($key)&quot;, &quot;$default[$key]&quot;, &quot;variable_get($key, 'foo')&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="&quot;Long description&quot;" alwaysStopAt="true" />
+    <variable name="options" expression="" defaultValue="&quot;[]&quot;" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_select" value="array(&#10;  '#type' =&gt; 'select',&#10;  '#required' =&gt; $required$,&#10;  '#title' =&gt; t('$title$'),&#10;  '#description' =&gt; t('$description$'),&#10;  '#default_value' =&gt; $default_value$,&#10;  '#empty_option' =&gt; t('$empty_option$'),&#10;  '#options' =&gt; $options$,&#10;)$terminator$" description="Render array - select" toReformat="true" toShortenFQNames="true">
+    <variable name="required" expression="enum(&quot;FALSE&quot;, &quot;TRUE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="&quot;Title&quot;" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="&quot;Long description&quot;" alwaysStopAt="true" />
+    <variable name="default_value" expression="enum(&quot;variable_get_value($key)&quot;, &quot;$default[$key]&quot;, &quot;variable_get($key, 'foo')&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="empty_option" expression="enum(&quot;- Select -&quot;, &quot;- Choice -&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="options" expression="" defaultValue="&quot;array()&quot;" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_select_" value="array(&#10;  '#type' =&gt; 'select',&#10;  '#required' =&gt; $required$,&#10;  '#title' =&gt; t('$title$'),&#10;  '#description' =&gt; t('$description$'),&#10;  '#default_value' =&gt; $default_value$,&#10;  '#empty_option' =&gt; t('$empty_option$'),&#10;  '#empty_value' =&gt; '$empty_value$',&#10;  '#options' =&gt; $options$,&#10;  '#size' =&gt; $size$,&#10;  '#field_prefix' =&gt; '$field_prefix$',&#10;  '#field_suffix' =&gt; '$field_suffix$',&#10;  '#prefix' =&gt; '$prefix$',&#10;  '#suffix' =&gt; '$suffix$',&#10;)$terminator$" description="Render array - select (Extended)" toReformat="true" toShortenFQNames="true">
+    <variable name="required" expression="enum(&quot;FALSE&quot;, &quot;TRUE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="&quot;Title&quot;" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="&quot;Long description&quot;" alwaysStopAt="true" />
+    <variable name="default_value" expression="enum(&quot;variable_get_value($key)&quot;, &quot;$default[$key]&quot;, &quot;variable_get($key, 'foo')&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="empty_option" expression="enum(&quot;- Select -&quot;, &quot;- Choice -&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="empty_value" expression="" defaultValue="&quot;&quot;" alwaysStopAt="true" />
+    <variable name="options" expression="" defaultValue="&quot;array()&quot;" alwaysStopAt="true" />
+    <variable name="size" expression="" defaultValue="&quot;30&quot;" alwaysStopAt="true" />
+    <variable name="field_prefix" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="field_suffix" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="prefix" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="suffix" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_submit" value="array(&#10;  '#type' =&gt; '$type$',&#10;  '#value' =&gt; t('$value$'),&#10;  '#name' =&gt; '$name$',$END$&#10;  '#limit_validation_errors' =&gt; $limit_validation_errors$,&#10;  '#submit' =&gt; array('$module$_$form$_submit_$name$'),&#10;  // ra__ajax&#10;)$terminator$" description="Render array - submit" toReformat="true" toShortenFQNames="true">
+    <variable name="type" expression="enum(&quot;submit&quot;, &quot;button&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="enum(&quot;Save&quot;, &quot;Send&quot;, &quot;Add&quot;, &quot;Remove&quot;, &quot;Delete&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="enum(&quot;add&quot;, &quot;remove&quot;, &quot;delete&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="limit_validation_errors" expression="" defaultValue="&quot;array()&quot;" alwaysStopAt="true" />
+    <variable name="module" expression="firstWord(fileNameWithoutExtension())" defaultValue="" alwaysStopAt="true" />
+    <variable name="form" expression="&quot;foo_form&quot;" defaultValue="" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_tableselect" value="array(&#10;  '#type' =&gt; 'tableselect',&#10;  '#default_value' =&gt; $default_value$,&#10;  '#header' =&gt; $header$,&#10;  '#multiple' =&gt; $multiple$,&#10;  '#js_select' =&gt; $js_select$,&#10;  '#empty' =&gt; t('$empty$'),&#10;  '#options' =&gt; $options$,&#10;)$terminator$" description="Render array - tableselect" toReformat="true" toShortenFQNames="true">
+    <variable name="default_value" expression="enum(&quot;variable_get_value($key)&quot;, &quot;$default[$key]&quot;, &quot;variable_get($key, array())&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="header" expression="" defaultValue="&quot;array()&quot;" alwaysStopAt="true" />
+    <variable name="multiple" expression="enum(&quot;TRUE&quot;, &quot;FALSE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="js_select" expression="enum(&quot;TRUE&quot;, &quot;FALSE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="empty" expression="" defaultValue="&quot;No items&quot;" alwaysStopAt="true" />
+    <variable name="options" expression="" defaultValue="&quot;array()&quot;" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_text_format" value="array(&#10;  '#type' =&gt; 'text_format',&#10;  '#required' =&gt; $required$,&#10;  '#title' =&gt; t('$title$'),&#10;  '#description' =&gt; t('$description$'),&#10;  '#default_value' =&gt; $default_value$,&#10;  '#format' =&gt; $format$,&#10;)$terminator$" description="Render array - text_format" toReformat="true" toShortenFQNames="true">
+    <variable name="required" expression="enum(&quot;FALSE&quot;, &quot;TRUE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="&quot;Title&quot;" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="&quot;Description&quot;" alwaysStopAt="true" />
+    <variable name="default_value" expression="" defaultValue="&quot;$foo-&gt;body&quot;" alwaysStopAt="true" />
+    <variable name="format" expression="" defaultValue="&quot;$foo-&gt;format&quot;" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_text_format_" value="array(&#10;  '#type' =&gt; 'text_format',&#10;  '#required' =&gt; $required$,&#10;  '#title' =&gt; t('$title$'),&#10;  '#description' =&gt; t('$description$'),&#10;  '#default_value' =&gt; $default_value$,&#10;  '#format' =&gt; $format$,&#10;  '#cols' =&gt; $cols$,&#10;  '#rows' =&gt; $rows$,&#10;)$terminator$" description="Render array - text_format (Extended)" toReformat="true" toShortenFQNames="true">
+    <variable name="required" expression="enum(&quot;FALSE&quot;, &quot;TRUE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="&quot;Title&quot;" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="&quot;Long description.&quot;" alwaysStopAt="true" />
+    <variable name="default_value" expression="" defaultValue="&quot;$foo-&gt;body&quot;" alwaysStopAt="true" />
+    <variable name="format" expression="" defaultValue="&quot;$foo-&gt;format&quot;" alwaysStopAt="true" />
+    <variable name="cols" expression="" defaultValue="&quot;80&quot;" alwaysStopAt="true" />
+    <variable name="rows" expression="" defaultValue="&quot;10&quot;" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_textarea" value="array(&#10;  '#type' =&gt; 'textarea',&#10;  '#required' =&gt; $required$,&#10;  '#title' =&gt; t('$title$'),&#10;  '#description' =&gt; t('$description$'),&#10;  '#cols' =&gt; $cols$,&#10;  '#rows' =&gt; $rows$,&#10;  '#default_value' =&gt; $default_value$,&#10;)$terminator$" description="Render array - textarea" toReformat="true" toShortenFQNames="true">
+    <variable name="required" expression="enum(&quot;FALSE&quot;, &quot;TRUE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="&quot;Title&quot;" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="&quot;Description&quot;" alwaysStopAt="true" />
+    <variable name="cols" expression="" defaultValue="&quot;60&quot;" alwaysStopAt="true" />
+    <variable name="rows" expression="" defaultValue="&quot;5&quot;" alwaysStopAt="true" />
+    <variable name="default_value" expression="enum(&quot;variable_get_value($key)&quot;, &quot;$default[$key]&quot;, &quot;variable_get($key, 'foo')&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_textfield" value="array(&#10;  '#type' =&gt; 'textfield',&#10;  '#required' =&gt; $required$,&#10;  '#title' =&gt; t('$title$'),&#10;  '#description' =&gt; t('$description$'),&#10;  '#default_value' =&gt; $default_value$,&#10;)$terminator$" description="Render array - textfield" toReformat="true" toShortenFQNames="true">
+    <variable name="required" expression="enum(&quot;FALSE&quot;, &quot;TRUE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="&quot;Title&quot;" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="&quot;Description&quot;" alwaysStopAt="true" />
+    <variable name="default_value" expression="enum(&quot;variable_get_value($key)&quot;, &quot;$default[$key]&quot;, &quot;variable_get($key, 'foo')&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_textfield_" value="array(&#10;  '#type' =&gt; 'textfield',&#10;  '#required' =&gt; $required$,&#10;  '#title' =&gt; t('$title$'),&#10;  '#description' =&gt; t('$description$'),&#10;  '#default_value' =&gt; $default_value$,&#10;  '#autocomplete_path' =&gt; &quot;$autocomplete_path$&quot;,&#10;  '#size' =&gt; $size$,&#10;  '#maxlength' =&gt; $maxlength$,&#10;  '#field_prefix' =&gt; '$field_prefix$',&#10;  '#field_suffix' =&gt; '$field_suffix$',&#10;  '#prefix' =&gt; '$prefix$',&#10;  '#suffix' =&gt; '$suffix$',&#10;)$terminator$" description="Render array - textfield (Extended)" toReformat="true" toShortenFQNames="true">
+    <variable name="required" expression="enum(&quot;FALSE&quot;, &quot;TRUE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="&quot;Title&quot;" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="&quot;Description&quot;" alwaysStopAt="true" />
+    <variable name="default_value" expression="enum(&quot;variable_get_value($key)&quot;, &quot;$default[$key]&quot;, &quot;variable_get($key, 'foo')&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="autocomplete_path" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="size" expression="" defaultValue="20" alwaysStopAt="true" />
+    <variable name="maxlength" expression="" defaultValue="255" alwaysStopAt="true" />
+    <variable name="field_prefix" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="field_suffix" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="prefix" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="suffix" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_value" value="array(&#10;  '#type' =&gt; 'value',&#10;  '#value' =&gt; $value$,&#10;)$terminator$" description="Render array - value" toReformat="true" toShortenFQNames="true">
+    <variable name="value" expression="" defaultValue="&quot;$foo&quot;" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_vertical_tabs" value="array(&#10;  '#type' =&gt; 'vertical_tabs',&#10;  '#tree' =&gt; $tree$,&#10;  '#default_tab' =&gt; '$default_tab$',&#10;)$terminator$" description="Render array - vertical_tabs" toReformat="true" toShortenFQNames="true">
+    <variable name="tree" expression="enum(&quot;TRUE&quot;, &quot;FALSE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="default_tab" expression="" defaultValue="&quot;foo&quot;" alwaysStopAt="true" />
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ra_weight" value="array(&#10;  '#type' =&gt; 'weight',&#10;  '#required' =&gt; $required$,&#10;  '#title' =&gt; t('$title$'),&#10;  '#description' =&gt; t('$description$'),&#10;  '#default_value' =&gt; $default_value$,&#10;  '#delta' =&gt; $delta$,&#10;)$terminator$" description="Render array - weight" toReformat="true" toShortenFQNames="true">
+    <variable name="terminator" expression="enum(&quot;;&quot;, &quot;,&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="delta" expression="" defaultValue="&quot;10&quot;" alwaysStopAt="true" />
+    <variable name="default_value" expression="enum(&quot;variable_get_value($key)&quot;, &quot;$default[$key]&quot;, &quot;variable_get($key, 'foo')&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="&quot;Description&quot;" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="&quot;Title&quot;" alwaysStopAt="true" />
+    <variable name="required" expression="enum(&quot;FALSE&quot;, &quot;TRUE&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="state" value="$name$" description="State name autocomplete" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="enum(&quot;visible&quot;, &quot;invisible&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP String Literal" value="true" />
+    </context>
+  </template>
+</templateSet>

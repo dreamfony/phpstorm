@@ -1,0 +1,30 @@
+<templateSet group="Drupal 8 - Schema">
+  <template name="schema_m" value="$key$:&#10;  type: schema$END$&#10;  label: '$label$'&#10;  mapping:&#10;    schema_" description="Definition - Mapping" toReformat="false" toShortenFQNames="true">
+    <variable name="key" expression="" defaultValue="&quot;my_key_01&quot;" alwaysStopAt="true" />
+    <variable name="label" expression="capitalize(underscoresToSpaces(key))" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="schema_s" value="$key$:&#10;  type: sequence&#10;  label: '$label$'&#10;  sequence:&#10;    type: schema$END$&#10;    label: '$item_label$'&#10;schema_" description="Definition - Sequence" toReformat="false" toShortenFQNames="true">
+    <variable name="key" expression="" defaultValue="&quot;my_key_01&quot;" alwaysStopAt="true" />
+    <variable name="label" expression="capitalize(underscoresToSpaces(key))" defaultValue="" alwaysStopAt="true" />
+    <variable name="item_label" expression="" defaultValue="label" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="schema" value="$name$" description="Schema type autocomplete" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="enum(&quot;boolean&quot;, &quot;float&quot;, &quot;integer&quot;, &quot;label&quot;, &quot;mapping&quot;, &quot;sequence&quot;, &quot;string&quot;, &quot;text&quot;, &quot;uri&quot;, &quot;action_configuration_default&quot;, &quot;base_entity_reference_field_settings&quot;, &quot;base_file_field_field_settings&quot;, &quot;block_settings&quot;, &quot;color_hex&quot;, &quot;condition.plugin&quot;, &quot;config_dependencies&quot;, &quot;config_entity&quot;, &quot;config_object&quot;, &quot;data&quot;, &quot;email&quot;, &quot;entity_reference_selection&quot;, &quot;field_config_base&quot;, &quot;field_default_image&quot;, &quot;field_formatter_settings_base_file&quot;, &quot;field.formatter.settings.datetime_base&quot;, &quot;field.formatter.settings.link&quot;, &quot;field.formatter.settings.text_trimmed&quot;, &quot;field.storage_settings.file&quot;, &quot;field.widget.settings.text_textfield&quot;, &quot;filter&quot;, &quot;ignore&quot;, &quot;image_size&quot;, &quot;language_type_negotiation&quot;, &quot;mail&quot;, &quot;path&quot;, &quot;plural_label&quot;, &quot;rdf_field_mapping&quot;, &quot;rest_request&quot;, &quot;rest_resource&quot;, &quot;route&quot;, &quot;text_format&quot;, &quot;theme_settings&quot;, &quot;tour.tip&quot;, &quot;views_area&quot;, &quot;views_argument&quot;, &quot;views.argument.argument_comment_user_uid&quot;, &quot;views.argument.date&quot;, &quot;views.argument.many_to_one&quot;, &quot;views.argument.numeric&quot;, &quot;views.argument.string&quot;, &quot;views.argument_validator_entity&quot;, &quot;views_block&quot;, &quot;views_cache&quot;, &quot;views_display&quot;, &quot;views_display_extender&quot;, &quot;views.display.page&quot;, &quot;views_display_path&quot;, &quot;views_entity_row&quot;, &quot;views_exposed_form&quot;, &quot;views_field&quot;, &quot;views_field_bulk_form&quot;, &quot;views.field.comment_link&quot;, &quot;views.field.date&quot;, &quot;views.field.entity_link&quot;, &quot;views.field.field&quot;, &quot;views.field.file&quot;, &quot;views.field.links&quot;, &quot;views.field.node&quot;, &quot;views.field.numeric&quot;, &quot;views.field.prerender_list&quot;, &quot;views_field_user&quot;, &quot;views.field.user_link&quot;, &quot;views_filter&quot;, &quot;views.filter.boolean&quot;, &quot;views.filter.date&quot;, &quot;views_filter_group_item&quot;, &quot;views.filter.in_operator&quot;, &quot;views.filter.many_to_one&quot;, &quot;views.filter.string&quot;, &quot;views.filter.taxonomy_index_tid&quot;, &quot;views.filter.user_name&quot;, &quot;views.filter_value.numeric&quot;, &quot;views_handler&quot;, &quot;views_pager&quot;, &quot;views_pager_sql&quot;, &quot;views_query&quot;, &quot;views_relationship&quot;, &quot;views_row&quot;, &quot;views.row.fields&quot;, &quot;views_sort&quot;, &quot;views.sort.date&quot;, &quot;views_sort_expose&quot;, &quot;views.sort_expose.standard&quot;, &quot;views_style&quot;, &quot;views.style.default_summary&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="schema_f" value="$key$:&#10;  type: schema$END$&#10;  label: '$label$'&#10;schema_" description="Definition - Flat (scalar)" toReformat="false" toShortenFQNames="true">
+    <variable name="key" expression="" defaultValue="&quot;my_key_01&quot;" alwaysStopAt="true" />
+    <variable name="label" expression="capitalize(underscoresToSpaces(key))" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+</templateSet>
